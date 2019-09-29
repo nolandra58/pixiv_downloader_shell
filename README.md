@@ -1,3 +1,3 @@
 # Pixiv_Downloader_Shell
-### [QQ群:835058977](https://shang.qq.com/wpa/qunwpa?idkey=69768c27d90b3aa4550e63df7d8b1cd65c581663cd4858c0a0f8fbdc8553c174)
+### [QQ群:835058977](https://shang.qq.com/wpa/qunwpa?idkey=69768c27d90b3aa4550e63df7d8b1cd65c581663cd4858c0a0f8fbdc8553c174) [软件下载git根目录](https://github.com/sh2288/pixiv_downloader_shell/blob/master/Pixiv_Downloader_Shell-2019-06-10.zip)
 >#### 新版本程序更新中,项目筹备中...
