@@ -1,1 +1,1 @@
-# pixiv_downloader_shell
+# Pixiv_downloader_shell
