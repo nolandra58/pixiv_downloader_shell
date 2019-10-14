@@ -17,7 +17,7 @@
 7.支持下列网址中所含ID的直接解析,也就是字符为id=数字的
 https://www.pixiv.net/member.php?id=1819503
 https://www.pixiv.net/member_illust.php?mode=medium&illust_id=69838120
-8.此软件要求必须有pixiv帐号,且需要登录后才能使用,设置选项中pixiv登录信息必填项
+8.此软件要求必须有pixiv帐号,设置选项中pixiv登录信息必填项
 ```
 >#### 使用说明
 ```
