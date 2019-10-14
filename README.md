@@ -23,10 +23,10 @@ https://www.pixiv.net/member_illust.php?mode=medium&illust_id=69838120
 >#### 使用说明
 ```
 1. 首先,设置页填写p站登录信息cookies,以及代理信息(不用代理请留空)http://127.0.0.1:1080 或其他地址
-如何查看P站已登录的cookies?
-使用chrome核心的浏览器,登陆P站
-按 F12,选择Application tab -> Storage -> Cookies
-选择pixiv.net,复制PHPSESSID的值
+##### 如何查看P站已登录的cookies?
+- 使用chrome核心的浏览器,登陆P站
+- 按 F12,选择Application tab -> Storage -> Cookies
+- 选择pixiv.net,复制PHPSESSID的值
 2. 选择下载选项,填入相应id(画师id或图集id)或其他(title或标签)后按下载按钮即可
 3. 请先测试(一些测试用的图集id,75034219,75148706),如果测试不能下载,请不要激活软件,没有问题后再考虑激活软件解锁全部功能
 4. 关于数据库,下载过的图片不会再次下载(很适合追某个画师的更新)除非删除data下的db.sqlite
