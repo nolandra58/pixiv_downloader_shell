@@ -22,6 +22,7 @@ https://www.pixiv.net/member_illust.php?mode=medium&illust_id=69838120
 8.此软件要求必须有pixiv帐号,设置选项中pixiv登录信息必填项
 ```
 >#### 使用说明
+![](img/使用方法.gif)
 ```
 1. 首先,设置页填写p站登录信息cookies,以及代理信息(不用代理请留空)http://127.0.0.1:1080 或其他地址
 ##### 如何查看P站已登录的cookies?
