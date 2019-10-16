@@ -11,15 +11,14 @@
 1.依据图集id下载原始大图
 2.一键批量下载自己收藏的图片(需要激活软件)
 3.一键批量下载某画师的所有图片(需要激活软件)
-4.支持下载动态图并转换动态图
+4.支持下载动态图并转换动态图(测试,某些格式需要安装ffmpeg)
 5.依据title标题批量下载整个套图(需要激活软件)
 6.支持代理,格式如下http://127.0.0.1:1080或http://user:password@proxy:port
 例如:公司内网代理格式如下:http://domain\user:password@proxyip:1080
 如果不使用代理请在设置--代理设置--留空并保存设置
 7.支持下列网址中所含ID的直接解析,也就是字符为id=数字的
 https://www.pixiv.net/member.php?id=1819503
-https://www.pixiv.net/member_illust.php?mode=medium&illust_id=69838120
-8.此软件要求必须有pixiv帐号,设置选项中pixiv登录信息必填项
+https://www.pixiv.net/artworks/77195575
 ```
 >#### 使用说明
 ##### p站cookies查看及设置
