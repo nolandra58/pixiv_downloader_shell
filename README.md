@@ -22,7 +22,7 @@ https://www.pixiv.net/artworks/77195575
 ```
 >#### 使用说明
 ##### p站cookies查看及设置
-![](img/pixiv_cookies_查看方法3.gif)
+![](img/pixiv_cookies_查看方法4.gif)
 ##### 下载演示
 ![](img/使用方法.gif)
 ```
