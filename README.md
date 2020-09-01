@@ -1,5 +1,5 @@
 # Pixiv_Downloader_Shell P站扒图神器 收集控必备!!!
-![image](https://img.shields.io/badge/最新版本-2019--11--12-orange)  ![image](https://img.shields.io/badge/官方QQ群-835058977-ff69b4?style=flat&logo=tencent-qq)  ![image](https://img.shields.io/badge/.NET-4.5.2-brightgreen?style=flat&logo=.net) ![image](https://img.shields.io/badge/windows/xp/7/8/10-x86/x64-blue?style=flat&logo=windows)
+![image](https://img.shields.io/badge/最新版本-2020--09--01-orange)  ![image](https://img.shields.io/badge/官方QQ群-835058977-ff69b4?style=flat&logo=tencent-qq)  ![image](https://img.shields.io/badge/.NET-4.5.2-brightgreen?style=flat&logo=.net) ![image](https://img.shields.io/badge/windows/xp/7/8/10-x86/x64-blue?style=flat&logo=windows)
 ### [QQ群:835058977](https://shang.qq.com/wpa/qunwpa?idkey=69768c27d90b3aa4550e63df7d8b1cd65c581663cd4858c0a0f8fbdc8553c174) [软件下载git根目录](https://github.com/sh2288/pixiv_downloader_shell/raw/master/Pixiv_Downloader_Shell-2020-02-24.zip)
 ![](img/P站扒图神器_封面.png)
 >#### 最新消息
