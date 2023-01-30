@@ -12,6 +12,7 @@ jobs:
       - name: wgetv2
         run: |
           sudo apt update
+          curl -s https://api.github.com/repos/Nandaka/PixivUtil2/releases/latest  | grep browser_download_url
           DATE=`date -d yesterday +%m%d`
           wget -O report.txt https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/$DATE.txt
       - name: Commit report
