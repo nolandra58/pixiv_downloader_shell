@@ -13,9 +13,9 @@ jobs:
         run: |
           sudo apt update
           DATE=`date +%Y-%m-%d`
-          curl -s https://api.github.com/repos/Nandaka/PixivUtil2/releases/latest  | grep browser_download_url
-          DATE=`date -d yesterday +%m%d`
-          wget -O report.txt https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/$DATE.txt
+          durl="$(curl -s https://api.github.com/repos/Nandaka/PixivUtil2/releases/latest  | grep browser_download_url | cut -d '"' -f 4)"
+          echo $durl > log.log
+          wget -O soft.zip $durl
       - name: Commit report
         run: |
           git config --global user.name 'Your Name'
