@@ -3,7 +3,6 @@ on:
   workflow_dispatch:
 #  schedule:
 #    - cron: 30 0 * * *
-
 jobs:
   env:
     runs-on: ubuntu-latest
@@ -11,17 +10,23 @@ jobs:
       - uses: actions/checkout@v2
       - name: getfiles
         run: |
-          #sudo apt update
+          sudo apt update
+          #get-my-soft
           DATE=`date +%Y-%m-%d`
+          #get-soft
           durl="$(curl -s https://api.github.com/repos/Nandaka/PixivUtil2/releases/latest  | grep browser_download_url | cut -d '"' -f 4)"
           wget -O soft.zip $durl
           mdate = "$(stat soft.zip | grep -i Modify | awk -F. '{print $1}' | awk '{print $2}')"
           mkdir data
           unzip soft.zip -d data
-          echo $mdate > log.log
+          echo $mdate > /main/ver.bin
       - name: Commit report
         run: |
           git config --global user.name 'Your Name'
           git config --global user.email 'your-username@users.noreply.github.com'
-          git commit -am "added"
-          git push
+#         git commit -am "$DATE"
+#         git push
+      - name: Create release
+        run: /main shipit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
