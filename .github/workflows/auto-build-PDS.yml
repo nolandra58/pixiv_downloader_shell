@@ -16,7 +16,7 @@ jobs:
           #get-soft
           durl="$(curl -s https://api.github.com/repos/Nandaka/PixivUtil2/releases/latest  | grep browser_download_url | cut -d '"' -f 4)"
           wget -O soft.zip $durl
-          MDATE = "$(stat soft.zip | grep -i Modify | awk -F. '{print $1}' | awk '{print $2}')"
+          MDATE="$(stat soft.zip | grep -i Modify | awk -F. '{print $1}' | awk '{print $2}')"
           mkdir /main/data
           unzip soft.zip -d /main/data
           echo $MDATE > /main/ver.bin
