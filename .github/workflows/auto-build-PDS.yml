@@ -27,6 +27,6 @@ jobs:
 #         git commit -am "$DATE"
 #         git push
       - name: Create release
-        run: data shipit
+        run: /data shipit
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
