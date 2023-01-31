@@ -1,7 +1,7 @@
 name: auto-build-PDS
 on:
   workflow_dispatch:
-  schedule:
+#  schedule:
 #    - cron: 30 0 * * *
 
 jobs:
@@ -9,13 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: wgetv2
+      - name: getfiles
         run: |
           #sudo apt update
           DATE=`date +%Y-%m-%d`
           durl="$(curl -s https://api.github.com/repos/Nandaka/PixivUtil2/releases/latest  | grep browser_download_url | cut -d '"' -f 4)"
           wget -O soft.zip $durl
           mdate = "$(stat soft.zip | grep -i Modify | awk -F. '{print $1}' | awk '{print $2}')"
+          mkdir data
+          unzip soft.zip -d data
           echo $mdate > log.log
       - name: Commit report
         run: |
