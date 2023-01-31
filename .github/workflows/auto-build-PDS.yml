@@ -11,11 +11,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: wgetv2
         run: |
-          sudo apt update
+          #sudo apt update
           DATE=`date +%Y-%m-%d`
           durl="$(curl -s https://api.github.com/repos/Nandaka/PixivUtil2/releases/latest  | grep browser_download_url | cut -d '"' -f 4)"
-          echo $durl > log.log
           wget -O soft.zip $durl
+          mdate = "$(stat soft.zip | grep -i Modify | awk -F. '{print $1}' | awk '{print $2}')"
+          echo $mdate > log.log
       - name: Commit report
         run: |
           git config --global user.name 'Your Name'
