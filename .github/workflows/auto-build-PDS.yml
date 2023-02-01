@@ -1,6 +1,8 @@
 name: auto-build-PDS
 on:
   workflow_dispatch:
+      tags:
+      - "v*.*.*"
 #  schedule:
 #    - cron: 30 0 * * *
 jobs:
