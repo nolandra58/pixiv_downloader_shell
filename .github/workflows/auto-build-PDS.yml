@@ -36,3 +36,4 @@ jobs:
         with:
           tag: ${{ steps.getfiles.MDATE }}
           artifacts: soft.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
