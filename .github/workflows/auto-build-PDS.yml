@@ -39,4 +39,5 @@ jobs:
           artifacts: "soft.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-          请始终保持使用最新版本,老版本可能因为pixiv反制而失效
+          请始终保持使用最新版本
+          老版本可能因为pixiv反制而失效
