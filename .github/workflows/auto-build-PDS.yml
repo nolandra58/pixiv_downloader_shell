@@ -34,6 +34,6 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          tag: "👆sh2288👆"
+          tag: "👆sh22888👆"
           artifacts: "soft.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
