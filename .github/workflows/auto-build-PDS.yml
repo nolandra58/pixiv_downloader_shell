@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: getfiles
+        id: getf
         run: |
           sudo apt update
           #get-my-soft
@@ -34,6 +35,8 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          tag: "👆sh22888👆"
+          tag: "${{ steps.getf.DATE }}"
           artifacts: "soft.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+          请始终保持使用最新版本,老版本可能因为pixiv反制而失效
