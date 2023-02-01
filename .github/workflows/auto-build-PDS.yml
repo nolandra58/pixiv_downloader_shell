@@ -33,5 +33,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #        if: startsWith(github.ref, 'refs/tags/')
         with:
-          tag_name: ${{ getfiles.MDATE }}
+          tag_name: ${{ steps.getfiles.MDATE }}
           files: soft.zip
