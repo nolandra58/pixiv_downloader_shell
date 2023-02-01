@@ -13,20 +13,24 @@ jobs:
           sudo apt update
           #get-my-soft
           DATE=`date +%Y-%m-%d`
-          #get-soft
+          #get-soft-data
           durl="$(curl -s https://api.github.com/repos/Nandaka/PixivUtil2/releases/latest  | grep browser_download_url | cut -d '"' -f 4)"
           wget -O soft.zip $durl
           MDATE="$(stat soft.zip | grep -i Modify | awk -F. '{print $1}' | awk '{print $2}')"
           mkdir data
           unzip soft.zip -d data
           echo $MDATE > ver.bin
-      - name: Commit report
-        run: |
-          git config --global user.name 'Your Name'
-          git config --global user.email 'your-username@users.noreply.github.com'
+          zipf=soft.zip
+#     - name: Commit report
+#       run: |
+#         git config --global user.name 'Your Name'
+#         git config --global user.email 'your-username@users.noreply.github.com'
 #         git commit -am "$DATE"
 #         git push
       - name: Create release
-        run: /data shipit
+        uses: softprops/action-gh-release@v1
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: $MDATE
+          files: $zipf
