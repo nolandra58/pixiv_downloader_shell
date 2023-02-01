@@ -35,5 +35,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: "👆sh2288👆"
-          artifacts: "main/*.exe"
+          artifacts: "soft.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
