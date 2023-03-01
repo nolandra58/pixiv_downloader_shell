@@ -32,10 +32,16 @@ jobs:
 #         git config --global user.email 'your-username@users.noreply.github.com'
 #         git commit -am "$DATE"
 #         git push
+
+      - name: Generate release tag
+        id: tag
+        run: |
+        echo "::set-output name=release_tag::$(date +%Y-%m-%d)"
+      
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          tag: "👆sh22888👆+$DATE"
+          tag: ${{ steps.tag.outputs.release_tag }}
           artifacts: "soft.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
