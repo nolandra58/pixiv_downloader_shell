@@ -25,7 +25,13 @@ jobs:
           mkdir data
           unzip soft.zip -d data
           echo $MDATE > ver.bin
-          zipf=soft.zip
+          # download ffmpeg to data
+          # move data & ver.bin to \main\
+          mv data main
+          mv ver.bin main
+          # zip main
+          zip -r pixiv_downloader_shell.zip main/*
+          # zipf=soft.zip
 #     - name: Commit report
 #       run: |
 #         git config --global user.name 'Your Name'
