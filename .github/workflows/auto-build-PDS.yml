@@ -24,6 +24,7 @@ jobs:
           MDATE="$(stat soft.zip | grep -i Modify | awk -F. '{print $1}' | awk '{print $2}')"
           mkdir data
           unzip soft.zip -d data
+          # if mdate == verbin then endaction else commit to verbin
           echo $MDATE > ver.bin
           # download ffmpeg to data
           wget https://github.com/nolandra58/pixiv_downloader_shell/releases/download/ffmpeg-2023-01-31/ffmpeg.exe
@@ -34,18 +35,16 @@ jobs:
           # zip main
           zip -r pixiv_downloader_shell.zip main/*
           # zipf=soft.zip
-#     - name: Commit report
-#       run: |
-#         git config --global user.name 'Your Name'
-#         git config --global user.email 'your-username@users.noreply.github.com'
-#         git commit -am "$DATE"
-#         git push
-
+      - name: Commit report
+        run: |
+         git config --global user.name 'Your Name'
+         git config --global user.email 'your-username@users.noreply.github.com'
+         git commit main/ver.bin -m "$DATE"
+         git push
       - name: Generate release tag
         id: tag
         run: |
-            echo "::set-output name=release_tag::pixiv_downloader_shell_$(date +%Y-%m-%d)"
-      
+            echo "::set-output name=release_tag::pixiv_downloader_shell_test$(date +%Y-%m-%d)"
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
