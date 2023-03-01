@@ -26,6 +26,8 @@ jobs:
           unzip soft.zip -d data
           echo $MDATE > ver.bin
           # download ffmpeg to data
+          wget https://github.com/nolandra58/pixiv_downloader_shell/releases/download/ffmpeg-2023-01-31/ffmpeg.exe
+          mv ffmpeg.exe data
           # move data & ver.bin to \main\
           mv data main
           mv ver.bin main
