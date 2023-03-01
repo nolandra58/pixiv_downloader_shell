@@ -48,7 +48,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.tag.outputs.release_tag }}
-          artifacts: "soft.zip"
+          artifacts: "pixiv_downloader_shell.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             请始终保持使用最新版本${{ steps.tag.outputs.release_tag }}
