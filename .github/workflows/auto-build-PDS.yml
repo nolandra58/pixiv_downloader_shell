@@ -36,7 +36,7 @@ jobs:
       - name: Generate release tag
         id: tag
         run: |
-        echo "::set-output name=release_tag::$(date +%Y-%m-%d)"
+          echo "::set-output name=release_tag::pixiv_downloader_shell_$(date +%Y-%m-%d)"
       
       - name: Create release
         uses: ncipollo/release-action@v1
@@ -45,5 +45,5 @@ jobs:
           artifacts: "soft.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            请始终保持使用最新版本$DATE
+            请始终保持使用最新版本${{ steps.tag.outputs.release_tag }}
             老版本可能因为pixiv反制而失效
