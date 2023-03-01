@@ -35,9 +35,9 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          tag: "👆sh22888👆"
+          tag: "👆sh22888👆+$DATE"
           artifacts: "soft.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            请始终保持使用最新版本
+            请始终保持使用最新版本$DATE
             老版本可能因为pixiv反制而失效
