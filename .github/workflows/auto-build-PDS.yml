@@ -28,7 +28,8 @@ jobs:
           VDATE=$(cat main/ver.bin)
           if [$VDATE == $MDATE]
           then
-          poweroff
+          echo $MDATE > ver.bin
+          exit 0
           fi
           echo $MDATE > ver.bin
           # download ffmpeg to data
