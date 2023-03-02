@@ -25,6 +25,11 @@ jobs:
           mkdir data
           unzip soft.zip -d data
           # if mdate == verbin then endaction else commit to verbin
+          VDATE=$(cat ver.bin)
+          if [$VDATE == $MDATE]
+          then
+          poweroff
+          fi
           echo $MDATE > ver.bin
           # download ffmpeg to data
           wget https://github.com/nolandra58/pixiv_downloader_shell/releases/download/ffmpeg-2023-01-31/ffmpeg.exe
