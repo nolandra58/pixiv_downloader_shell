@@ -44,7 +44,7 @@ jobs:
       - name: Generate release tag
         id: tag
         run: |
-            echo "tagname=pixiv_downloader_shell_test2$(date +%Y-%m-%d)" >> $GITHUB_ENV
+            echo "tagname=pixiv_downloader_shell_$(date +%Y-%m-%d)" >> $GITHUB_ENV
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
