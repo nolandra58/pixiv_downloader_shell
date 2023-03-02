@@ -29,6 +29,7 @@ jobs:
           if [$VDATE == $MDATE]
           then
           echo $MDATE > ver.bin
+          mv ver.bin main
           exit 0
           else
           echo $MDATE > ver.bin
