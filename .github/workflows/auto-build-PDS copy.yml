@@ -11,7 +11,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: getfiles
         id: getf
         run: |
@@ -44,11 +44,11 @@ jobs:
       - name: Generate release tag
         id: tag
         run: |
-            echo "::set-output name=release_tag::pixiv_downloader_shell_test$(date +%Y-%m-%d)"
+            echo "tagname=pixiv_downloader_shell_test2$(date +%Y-%m-%d)" >> $GITHUB_ENV
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          tag: ${{ steps.tag.outputs.release_tag }}
+          tag: ${{ env.tagname }}
           artifacts: "pixiv_downloader_shell.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
