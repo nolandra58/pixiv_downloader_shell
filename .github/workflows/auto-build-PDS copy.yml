@@ -4,7 +4,7 @@ on:
       tags:
       - "*"
   schedule:
-    - cron: * * * * * 5
+    - cron: 0 2 * * 5
 jobs:
   env:
     runs-on: ubuntu-latest
