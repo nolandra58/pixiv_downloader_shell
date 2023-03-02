@@ -1,20 +1,56 @@
-name: Releases
-
+name: auto-build-PDS_MR
 on:
   workflow_dispatch:
-    tags:
+      tags:
       - "*"
-
+#  schedule:
+#    - cron: 30 0 * * *
 jobs:
-  build:
+  env:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v2
-      - uses: ncipollo/release-action@v1
+      - name: getfiles
+        id: getf
+        run: |
+          sudo apt update
+          #get-my-soft
+          DATE=`date +%Y-%m-%d`
+          #get-soft-data
+          durl="$(curl -s https://api.github.com/repos/Nandaka/PixivUtil2/releases/latest  | grep browser_download_url | cut -d '"' -f 4)"
+          wget -O soft.zip $durl
+          MDATE="$(stat soft.zip | grep -i Modify | awk -F. '{print $1}' | awk '{print $2}')"
+          mkdir data
+          unzip soft.zip -d data
+          # if mdate == verbin then endaction else commit to verbin
+          echo $MDATE > ver.bin
+          # download ffmpeg to data
+          wget https://github.com/nolandra58/pixiv_downloader_shell/releases/download/ffmpeg-2023-01-31/ffmpeg.exe
+          mv ffmpeg.exe data
+          # move data & ver.bin to \main\
+          mv data main
+          mv ver.bin main
+          # zip main
+          zip -r pixiv_downloader_shell.zip main/*
+          # zipf=soft.zip
+      - name: Commit report
+        run: |
+         git config --global user.name 'Your Name'
+         git config --global user.email 'your-username@users.noreply.github.com'
+         git commit main/ver.bin -m "add"
+         git push
+      - name: Generate release tag
+        id: tag
+        run: |
+            echo "::set-output name=release_tag::pixiv_downloader_shell_test$(date +%Y-%m-%d)"
+      - name: Create release
+        uses: ncipollo/release-action@v1
         with:
-          tag: "sss"
-          artifacts: "release.tar.gz,main/*.exe"
-#          bodyFile: "body.md"
+          tag: ${{ steps.tag.outputs.release_tag }}
+          artifacts: "pixiv_downloader_shell.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            请始终保持使用最新版本${{ steps.tag.outputs.release_tag }}
+            老版本可能因为pixiv反制而失效
