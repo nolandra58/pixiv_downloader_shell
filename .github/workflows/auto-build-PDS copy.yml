@@ -3,8 +3,8 @@ on:
   workflow_dispatch:
       tags:
       - "*"
-#  schedule:
-#    - cron: 30 0 * * *
+  schedule:
+    - cron: * * * * * 5
 jobs:
   env:
     runs-on: ubuntu-latest
