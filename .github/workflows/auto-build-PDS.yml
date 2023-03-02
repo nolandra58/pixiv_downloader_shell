@@ -25,7 +25,7 @@ jobs:
           mkdir data
           unzip soft.zip -d data
           # if mdate == verbin then endaction else commit to verbin
-          VDATE=$(cat ver.bin)
+          VDATE=$(cat main/ver.bin)
           if [$VDATE == $MDATE]
           then
           poweroff
