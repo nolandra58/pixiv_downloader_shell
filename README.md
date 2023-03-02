@@ -5,6 +5,8 @@
 ![](img/P站扒图神器_封面.png)
 >#### 最新消息
 ```
+2023-03-01 如果出错请修改data/config.ini,为useragent = Mozilla/5.0,删除掉下图蓝色部分
+![image](img/useragent_fixed.png)
 2023-03-01 自动构建版本已经发布
 2023-01-30 自动发布新版本
 2020-12-02 已更新,添加ffmpeg组件(下动态图用)
