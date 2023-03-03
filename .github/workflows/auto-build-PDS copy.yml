@@ -1,10 +1,8 @@
 name: auto-build-PDS_MR
 on:
   workflow_dispatch:
-      tags:
-      - "*"
   schedule:
-    - cron: 0 2 * * 5
+    - cron: 0 1 * * 5
 jobs:
   env:
     runs-on: ubuntu-latest
