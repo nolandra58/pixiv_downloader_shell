@@ -1,6 +1,6 @@
 # Pixiv_Downloader_Shell P站扒图神器 收集控必备!!!
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/nolandra58/pixiv_downloader_shell?display_name=tag&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC)  ![image](https://img.shields.io/badge/官方QQ群-835058977-ff69b4?style=flat&logo=tencent-qq)  ![image](https://img.shields.io/badge/.NET-4.5.2-brightgreen?style=flat&logo=.net) ![image](https://img.shields.io/badge/windows/xp/7/8/10-x86/x64-blue?style=flat&logo=windows) ![image](https://github.com/nolandra58/pixiv_downloader_shell/actions/workflows/auto-build-PDS%20copy.yml/badge.svg)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/nolandra58/pixiv_downloader_shell?display_name=tag&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC)](https://github.com/nolandra58/pixiv_downloader_shell/releases/latest)  ![image](https://img.shields.io/badge/官方QQ群-835058977-ff69b4?style=flat&logo=tencent-qq)  ![image](https://img.shields.io/badge/.NET-4.5.2-brightgreen?style=flat&logo=.net) ![image](https://img.shields.io/badge/windows/xp/7/8/10-x86/x64-blue?style=flat&logo=windows) ![image](https://github.com/nolandra58/pixiv_downloader_shell/actions/workflows/auto-build-PDS%20copy.yml/badge.svg)
 ### [软件发布QQ群:835058977](https://shang.qq.com/wpa/qunwpa?idkey=69768c27d90b3aa4550e63df7d8b1cd65c581663cd4858c0a0f8fbdc8553c174) [点此下载](https://github.com/nolandra58/pixiv_downloader_shell/releases/latest)
 ![](img/P站扒图神器_封面.png)
 >#### 最新消息
