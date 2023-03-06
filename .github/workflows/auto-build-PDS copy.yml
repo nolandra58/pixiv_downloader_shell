@@ -6,6 +6,7 @@ on:
 jobs:
   env:
     runs-on: ubuntu-latest
+    continue-on-error: true
     permissions:
       contents: write
     steps:
