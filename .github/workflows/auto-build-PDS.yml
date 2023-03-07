@@ -46,7 +46,7 @@ jobs:
           # zipf=soft.zip
           fi
       - name: Commit report
-        if: steps.getf.outputs.bbb
+        if: ${{ env.bbb }}
         run: |
          git config --global user.name 'Your Name'
          git config --global user.email 'your-username@users.noreply.github.com'
@@ -58,7 +58,7 @@ jobs:
             echo "tagname=pixiv_downloader_shell_$(date +%Y-%m-%d)" >> $GITHUB_ENV
       - name: Create release
         uses: ncipollo/release-action@v1
-        if: steps.getf.outputs.bbb
+        if: ${{ env.bbb }}
         with:
           tag: ${{ env.tagname }}
           artifacts: "pixiv_downloader_shell.zip"
