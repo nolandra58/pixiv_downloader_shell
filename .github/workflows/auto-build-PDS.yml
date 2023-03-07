@@ -30,8 +30,10 @@ jobs:
           if [ $VDATE = $MDATE ]
           then
           echo $VDATE
+          echo "bbb=false" >> $GITHUB_ENV
           exit 0
           else
+          echo "bbb=true" >> $GITHUB_ENV
           echo $MDATE > ver.bin
           # download ffmpeg to data
           wget https://github.com/nolandra58/pixiv_downloader_shell/releases/download/ffmpeg-2023-01-31/ffmpeg.exe
@@ -51,10 +53,12 @@ jobs:
          git push
       - name: Generate release tag
         id: tag
+        if: steps.tag.outputs.bbb
         run: |
             echo "::set-output name=release_tag::pixiv_downloader_shell_test$(date +%Y-%m-%d)"
       - name: Create release
         uses: ncipollo/release-action@v1
+        if: steps.tag.outputs.bbb
         with:
           tag: ${{ steps.tag.outputs.release_tag }}
           artifacts: "pixiv_downloader_shell.zip"
