@@ -46,7 +46,7 @@ jobs:
           # zipf=soft.zip
           fi
       - name: Commit report
-        if: steps.getf.outputs.bbb
+        if: env.bbb
         run: |
          git config --global user.name 'Your Name'
          git config --global user.email 'your-username@users.noreply.github.com'
@@ -55,14 +55,14 @@ jobs:
       - name: Generate release tag
         id: tag
         run: |
-            echo "::set-output name=release_tag::pixiv_downloader_shell_test$(date +%Y-%m-%d)"
+            echo "tagname=pixiv_downloader_shell_$(date +%Y-%m-%d)" >> $GITHUB_ENV
       - name: Create release
         uses: ncipollo/release-action@v1
-        if: steps.getf.outputs.bbb
+        if: env.bbb
         with:
-          tag: ${{ steps.tag.outputs.release_tag }}
+          tag: ${{ env.tagname }}
           artifacts: "pixiv_downloader_shell.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            请始终保持使用最新版本${{ steps.tag.outputs.release_tag }}
+            请始终保持使用最新版本${{ env.tagname }}
             老版本可能因为pixiv反制而失效
