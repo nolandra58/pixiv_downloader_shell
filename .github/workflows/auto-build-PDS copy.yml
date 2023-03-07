@@ -51,5 +51,5 @@ jobs:
           artifacts: "pixiv_downloader_shell.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            请始终保持使用最新版本${{ steps.tag.outputs.release_tag }}
+            请始终保持使用最新版本${{ env.tagname }}
             老版本可能因为pixiv反制而失效
