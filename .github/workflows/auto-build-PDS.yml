@@ -27,10 +27,9 @@ jobs:
           unzip soft.zip -d data
           # if mdate == verbin then endaction else commit to verbin
           VDATE=$(cat main/ver.bin)
-          if [$VDATE == $MDATE]
+          if [ $VDATE = $MDATE ]
           then
-          echo $MDATE > ver.bin
-          mv ver.bin main
+          echo $VDATE
           exit 0
           else
           echo $MDATE > ver.bin
