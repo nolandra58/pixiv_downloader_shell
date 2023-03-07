@@ -46,6 +46,7 @@ jobs:
           # zipf=soft.zip
           fi
       - name: Commit report
+        if: steps.tag.outputs.bbb
         run: |
          git config --global user.name 'Your Name'
          git config --global user.email 'your-username@users.noreply.github.com'
@@ -53,7 +54,6 @@ jobs:
          git push
       - name: Generate release tag
         id: tag
-        if: steps.tag.outputs.bbb
         run: |
             echo "::set-output name=release_tag::pixiv_downloader_shell_test$(date +%Y-%m-%d)"
       - name: Create release
